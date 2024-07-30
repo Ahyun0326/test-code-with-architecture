@@ -2,7 +2,7 @@ package com.example.demo.user.service;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import com.example.demo.common.mock.FakeMailSender;
+import com.example.demo.mock.FakeMailSender;
 import org.junit.jupiter.api.Test;
 
 public class CertificationServiceTest {
