@@ -1,5 +1,6 @@
 package com.example.demo.post.controller;
 
+import com.example.demo.common.service.port.ClockHolder;
 import com.example.demo.post.domain.PostCreate;
 import com.example.demo.post.controller.response.PostResponse;
 import com.example.demo.post.service.PostService;
