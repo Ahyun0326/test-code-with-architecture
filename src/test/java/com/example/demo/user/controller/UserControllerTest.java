@@ -5,7 +5,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 import com.example.demo.common.domain.exception.CertificationCodeNotMatchedException;
 import com.example.demo.common.domain.exception.ResourceNotFoundException;
-import com.example.demo.common.service.port.ClockHolder;
 import com.example.demo.mock.TestContainer;
 import com.example.demo.user.controller.response.MyProfileResponse;
 import com.example.demo.user.controller.response.UserResponse;
@@ -34,7 +33,7 @@ public class UserControllerTest {
             .build());
 
     // when
-    ResponseEntity<UserResponse> result = testContainer.userController.getUserById(1);
+    ResponseEntity<UserResponse> result = testContainer.userController.getById(1);
 
     // then
     assertThat(result.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(200));
@@ -55,7 +54,7 @@ public class UserControllerTest {
     // when
     // then
     assertThatThrownBy(() -> {
-      testContainer.userController.getUserById(1);
+      testContainer.userController.getById(1);
     }).isInstanceOf(ResourceNotFoundException.class);
   }
 
