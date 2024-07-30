@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 
 public class UserServiceTest {
 
-  private UserService userService;
+  private UserServiceImpl userService;
 
   @BeforeEach
   void init() {
@@ -26,7 +26,7 @@ public class UserServiceTest {
     FakeUserRepository fakeUserRepository = new FakeUserRepository();
 
     this.userService =
-        UserService.builder()
+        UserServiceImpl.builder()
             .uuidHolder(new TestUuidHolder("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaab"))
             .clockHolder(new TestClockHolder(1678530673958L))
             .userRepository(fakeUserRepository)
